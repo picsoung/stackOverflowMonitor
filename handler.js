@@ -12,7 +12,7 @@ module.exports.getStackOverflowQuestions = (event, context, callback) => {
   let url = 'https://api.stackexchange.com'
   url += '/2.2/search/advanced?pagesize=1&order=desc&sort=creation&site=stackoverflow'
   url += '&q=' + process.env.SEARCH_KEYWORD
-  url += '&key=' + process.env.STACK_OVERFLOW_KEY
+  url += '&key=' + process.env.STACK_EXCHANGE_KEY
 
   rp({
      method: 'GET',

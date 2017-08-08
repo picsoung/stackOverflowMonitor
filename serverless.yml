@@ -16,7 +16,7 @@ functions:
       - http: GET getStackOverflowQuestions
       - schedule: rate(20 minutes) # Change it to your own if needed
     environment:
-       STACK_OVERFLOW_KEY: 'YOUR_STACK_OVERFLOW_KEY'
+       STACK_EXCHANGE_KEY: 'YOUR_STACK_OVERFLOW_KEY'
        SLACK_WEBHOOK_URL: 'YOUR_SLACK_WEBHOOK_URL'
        SLACK_CHANNEL: '#MY_CHANNEL'
        SLACK_USERNAME: 'StackOverflow'
