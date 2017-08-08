@@ -1,0 +1,24 @@
+service: stackOverflowMonitor
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    FAUNADB_SECRET: 'YOUR_OWN_SECRET'
+
+functions:
+  getStackOverflowQuestions:
+    handler: handler.getStackOverflowQuestions
+    events:
+      - http: GET getStackOverflowQuestions
+      - schedule: rate(20 minutes) # Change it to your own if needed
+    environment:
+       STACK_OVERFLOW_KEY: 'YOUR_STACK_OVERFLOW_KEY'
+       SLACK_WEBHOOK_URL: 'YOUR_SLACK_WEBHOOK_URL'
+       SLACK_CHANNEL: '#MY_CHANNEL'
+       SLACK_USERNAME: 'StackOverflow'
+       SLACK_ICON_URL: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png'
+       SEARCH_KEYWORD: 'MY_KEYWORD'
