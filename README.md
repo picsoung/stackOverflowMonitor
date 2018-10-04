@@ -35,6 +35,7 @@ in `serverless.yml` change the environment variables to your own values.
 
 ## Contribute
 This project is open source, and we welcome anybody who wants to participate and contribute!
+and Thanks for Contribute...
 
 ## License
 The MIT License (MIT)
